@@ -28,7 +28,7 @@
       if (url && url.length > 1) {
         url = decodeURIComponent(url[1]);
       } else {
-        url = "http://petstore.swagger.io/v2/swagger.json";
+        url = "https://localhost:3000/api.json";
       }
       window.swaggerUi = new SwaggerUi({
         url: url,
@@ -36,13 +36,11 @@
         supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
         onComplete: function(swaggerApi, swaggerUi){
           if(typeof initOAuth == "function") {
-            /*
             initOAuth({
-              clientId: "your-client-id",
-              realm: "your-realms",
-              appName: "your-app-name"
+              clientId: "1",
+              realm: "clinical-trials",
+              appName: "clinical-trials"
             });
-            */
           }
           $('pre code').each(function(i, e) {
             hljs.highlightBlock(e)
